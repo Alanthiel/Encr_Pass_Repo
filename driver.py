@@ -90,6 +90,7 @@ def write_file(context, cred=None, path='store.cr'):
         out_stream.write(cred.nonce)
         out_stream.write(auth)
         out_stream.close()
+    return cred
 
 
 if __name__ == "__main__":

@@ -1,14 +1,14 @@
 import json
-import mmap
-import scrypt
-import random
 import string
 import getpass
+from Crypto.Protocol.KDF import scrypt
+from Crypto.Cipher import AES
+from Crypto.Random import get_random_bytes
 
 
 def read_file(path="store.cr"):
     with open(path, mode="r") as pass_raw:
-        with mmap.mmap(pass_raw.fileno(), length=0, flags=mmap.MAP_PRIVATE) as data:
+        with mmap.mmap(pass_raw.fileno(), length=0, flags=mmap.MAP_PRIVATE, prot=mmap.PROT_READ) as data:
             read_info = data.read()
             data.close()
             return read_info

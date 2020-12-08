@@ -1,4 +1,3 @@
-import json
 import getpass
 from Crypto.Cipher import AES
 from Crypto.Protocol.KDF import scrypt
@@ -61,9 +60,6 @@ class Bundle:
         self.password = password
         self.backup_codes = backup_codes
 
-    def return_dict(self):
-        return {}
-
 
 def decipher_and_read(path='store.cr'):
     with open(file=path, mode='rb') as instream:
@@ -82,7 +78,7 @@ def decipher_and_read(path='store.cr'):
             print('Password incorrectly entered')
             return False
         else:
-            if input("MAC Check Failure.......File Tampered With / Corrupted, Proceed?").lower() != 'y':
+            if input("MAC Check Failure.......File Tampered With / Corrupted, Proceed? (y/n)").lower() != 'y':
                 return False
     return content, cipher
 

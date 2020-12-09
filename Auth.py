@@ -1,3 +1,26 @@
+# MIT License
+
+# Copyright (c) 2020 Nehal Gowrish (Alias: Alux-Alpha)
+
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+
 import getpass
 from Crypto.Cipher import AES
 from Crypto.Protocol.KDF import scrypt
@@ -7,6 +30,7 @@ MODE_RAW = "RAW PASSWORD IS STORED IN THE CREDENTIALS INSTANCE"  # Password Gen
 MODE_KEY = "CREDENTIALS INSTANCE IS PROBABLY FULL"  # Post Encryption / Decryption
 MODE_AUTH = "EVERYTHING BUT THE KEY IS KNOWN, USED FOR AUTHENTICATION"  # Authentication of Database
 
+# TODO: Redesign Read / Write Operations around Virtual Memory, with either mmap or io.BytesIO, preferably  <BytesIO>
 
 class Credentials:
     def __init__(self, key=None, nonce=None, salt=None, tag=None):
@@ -74,6 +98,8 @@ def decipher_and_read(path='store.cr'):
             if input("MAC Check Failure.......File Tampered With / Corrupted, Proceed? (y?) ").lower() != 'y':
                 return False
     return content, cipher
+    # TODO: Design Virtual Memory Processing -> Load to Virtual Memory, Convert Content to BytesIO fed into return
+    #       Returns BytesIO to <class Database> from <DBMan.py>
 
 
 # def lock_file(context, cred=None, path='store.sql'):
@@ -94,6 +120,9 @@ def write_file(context, cred=None, path='store.cr'):
         out_stream.write(auth)
         out_stream.close()
     return cred
+
+    # TODO: Design Virtual Memory Processing -> read connection virtual database i.e. <class DataBase :: source >
+    #       file i.e. virtual memory file and transfer it to context and write as postscript to output .db file
 
 
 if __name__ == "__main__":

@@ -54,13 +54,6 @@ class Credentials:
             self.__mode = MODE_KEY
 
 
-class Bundle:
-    def __init__(self, user_id=None, password=None, backup_codes=None):
-        self.user_id = user_id
-        self.password = password
-        self.backup_codes = backup_codes
-
-
 def decipher_and_read(path='store.cr'):
     with open(file=path, mode='rb') as instream:
         content = instream.read()
@@ -85,7 +78,7 @@ def decipher_and_read(path='store.cr'):
 
 def write_file(context, cred=None, path='store.cr'):
     if cred is None:
-        print('New Cipher Signal Received: Generating New Cipher...')
+        print('No existing Credentials found: Generating New Cipher...')
         cred = Credentials()
         cred.set_key(passwd=getpass.getpass('Enter Encryption Password: '))
     cipher = AES.new(key=cred.key, mode=AES.MODE_GCM, nonce=cred.nonce)

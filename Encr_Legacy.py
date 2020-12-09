@@ -23,7 +23,7 @@ def write_file(file_obj, path="store.cr"):
 
 def gen_salt(size=6):
     if type(size) is not int:
-        raise ValueError("Sale Size should be an Int")
+        raise ValueError("Salt Size should be an Int")
     choices = string.ascii_letters + string.digits + string.punctuation.replace('$', '')
     salt = ''.join(random.choices(choices, k=size))
     return salt

@@ -3,9 +3,9 @@ from Crypto.Cipher import AES
 from Crypto.Protocol.KDF import scrypt
 from Crypto.Random import get_random_bytes
 
-MODE_RAW = "RAW PASSWORD STORED IN MEMBER KEY"
-MODE_KEY = "THE CREDENTIAL FILE IS PROBABLY FULL"
-MODE_AUTH = "EVERYTHING BUT THE KEY IS KNOWN, USED FOR AUTHENTICATION"
+MODE_RAW = "RAW PASSWORD IS STORED IN THE CREDENTIALS INSTANCE"  # Password Gen
+MODE_KEY = "CREDENTIALS INSTANCE IS PROBABLY FULL"  # Post Encryption / Decryption
+MODE_AUTH = "EVERYTHING BUT THE KEY IS KNOWN, USED FOR AUTHENTICATION"  # Authentication of Database
 
 
 class Credentials:
@@ -71,7 +71,7 @@ def decipher_and_read(path='store.cr'):
             print('Password incorrectly entered')
             return False
         else:
-            if input("MAC Check Failure.......File Tampered With / Corrupted, Proceed? (y/n)").lower() != 'y':
+            if input("MAC Check Failure.......File Tampered With / Corrupted, Proceed? (y?) ").lower() != 'y':
                 return False
     return content, cipher
 

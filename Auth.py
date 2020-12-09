@@ -76,6 +76,10 @@ def decipher_and_read(path='store.cr'):
     return content, cipher
 
 
+# def lock_file(context, cred=None, path='store.sql'):
+#    with open
+
+
 def write_file(context, cred=None, path='store.cr'):
     if cred is None:
         print('No existing Credentials found: Generating New Cipher...')

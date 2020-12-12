@@ -18,7 +18,7 @@ In Order to Protect against these for any users of this Project for personal use
 
 ### Checking the Integrity:
 
-####Automated Script Check:
+**Automated Script Check:**
 
 - Download the Latest version of `Code_Management.py`
 - Copy the script to your Software Folder
@@ -28,9 +28,9 @@ In Order to Protect against these for any users of this Project for personal use
 ```
 - Follow the Onscreen Steps to automatically Verify and/or Rectify your copy of the Software
 
-Note: Code_Management.py to be integrated as Software Management Module Next Update
+*Please Note: Code_Management.py to be integrated as Software Management Module Next Update*
 
-####Manual Check:
+**Manual Check:**
 For Linux/Mac Users:
 
 - Open your preferred Terminal

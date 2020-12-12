@@ -31,10 +31,10 @@ For Linux/Mac Users:
 - Verify the SHA256 sum, i.e. Output with the following, esp the provided string of digits and numbers
 ```
     029aa7bc2733ec9b3b7f9ea377c09ebe6688da677c335480bb41340d325cc7ec  Auth.py
-    8a68e1c760f98b0312627e14f1cfa40235324fdca9ff4392a62b854a0e427b45  DBMan.py
+    873636cce8697b9a0605e3ba561c1ba92ed11588978df05476cdccd72d2d55f4  DBMan.py
 ```
 - Will Update the Above CheckSums with subsequent Commits:
-    - Current Commit : `10 December 2020, 03:00 AM (IST)`
+    - Current Commit : `13 December 2020, 00:46 AM (IST)`
 
 - Ensure the Date on the  Commit Date and Time on the Readme.md file and the Version Number of your edition is Same as the [GitHub Page](https://github.com/Alux-Alpha/Encr_Pass_Repo)
 

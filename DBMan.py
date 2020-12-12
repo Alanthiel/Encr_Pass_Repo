@@ -47,10 +47,10 @@ class Bundle:
     def check_codes(self):
         if self.backup_codes is None:
             return True
-        if self.backup_codes is not list:
+        if type(self.backup_codes) is not list:
             raise TypeError("Error: Backup Code format incorrect, Format should be of type <list>")
         for i in self.backup_codes:
-            if i is not str:
+            if type(i) is not str:
                 raise TypeError("Error: Code format incorrect, [{}] is not of type <string>".format(i))
 
     def return_dict(self):

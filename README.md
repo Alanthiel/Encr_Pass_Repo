@@ -1,4 +1,4 @@
-# Encr_Pass_Repo V 0.3.1
+# Encr_Pass_Repo V0.3.1
 
 Encrypted Local Password Manager:
 
@@ -30,7 +30,7 @@ For Linux/Mac Users:
 ```
 - Verify the SHA256 sum, i.e. Output with the following, esp the provided string of digits and numbers
 ```
-    b6891a091882f9d2d34761dea8874d565bde2853b62f8aaf1ea98eb4ddd28824  Auth.py
+    029aa7bc2733ec9b3b7f9ea377c09ebe6688da677c335480bb41340d325cc7ec  Auth.py
     8a68e1c760f98b0312627e14f1cfa40235324fdca9ff4392a62b854a0e427b45  DBMan.py
 ```
 - Will Update the Above CheckSums with subsequent Commits:

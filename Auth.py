@@ -32,6 +32,7 @@ MODE_AUTH = "EVERYTHING BUT THE KEY IS KNOWN, USED FOR AUTHENTICATION"  # Authen
 
 # TODO: Redesign Read / Write Operations around Virtual Memory, with either mmap or io.BytesIO, preferably  <BytesIO>
 
+
 class Credentials:
     def __init__(self, key=None, nonce=None, salt=None, tag=None):
         if nonce is None:

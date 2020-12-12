@@ -1,4 +1,4 @@
-# Encr_Pass_Repo V0.3.1.1
+# Encr_Pass_Repo V0.3.2
 
 Encrypted Local Password Manager:
 
@@ -17,6 +17,20 @@ In Order to Protect against these for any users of this Project for personal use
 - Check the Integrity of the Software Using SHA CheckSums of the files. Refer to the Guide Below
 
 ### Checking the Integrity:
+
+#####Automated Script Check:
+
+- Download the Latest version of `Code_Management.py`
+- Copy the script to your Software Folder
+- Run the script
+```
+    $ ./Code_Management.py
+```
+- Follow the Onscreen Steps to automatically Verify and/or Rectify your copy of the Software
+
+Note: Code_Management.py to be integrated as Software Management Module Next Update
+
+#####Manual Check:
 For Linux/Mac Users:
 
 - Open your preferred Terminal
@@ -33,20 +47,29 @@ For Linux/Mac Users:
     029aa7bc2733ec9b3b7f9ea377c09ebe6688da677c335480bb41340d325cc7ec  Auth.py
     873636cce8697b9a0605e3ba561c1ba92ed11588978df05476cdccd72d2d55f4  DBMan.py
 ```
+- Please Note, if you are Running A different Version the Above Hashes will vary, Please Refer the Meta.json or Employ the `Code_Management.py` script.
 - Will Update the Above CheckSums with subsequent Commits:
     - Current Commit : `13 December 2020, 00:46 AM (IST)`
 
 - Ensure the Date on the  Commit Date and Time on the Readme.md file and the Version Number of your edition is Same as the [GitHub Page](https://github.com/Alux-Alpha/Encr_Pass_Repo)
 
-Note: Integrity Check Script Due next minor Commit 
-
 ### In Progress:
+
+V0.3.2
 
 - [x] ~~Implement Credentials Class~~
 - [x] ~~Design Initial Encryption System~~
 - [x] ~~Design Data Bundles~~ 
-- [ ] Implement Software Integrity Check using File Hashes
+- [x] ~~Software Integrity Check using File Hashes Implemented~~
+- [x] ~~Software Management Module Implemented~~
+
+V0.3.3
+
+- [ ] Software Management Module Integration
 - [ ] Design Password Meter   
+
+V0.3.5
+
 - [ ] Redesign Physical Write / Write Operations around Private Virtual Files with passthroughs to Database for Security
 - [ ] Design { Virtual File - Sqlite3 connection } pathway, Refer infile TODOs  
 - [ ] Developing SQL Management System

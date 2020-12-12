@@ -1,4 +1,4 @@
-# Encr_Pass_Repo V0.3.1
+# Encr_Pass_Repo V0.3.1.1
 
 Encrypted Local Password Manager:
 

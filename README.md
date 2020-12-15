@@ -47,7 +47,7 @@ For Linux/Mac Users:
     029aa7bc2733ec9b3b7f9ea377c09ebe6688da677c335480bb41340d325cc7ec  Auth.py
     873636cce8697b9a0605e3ba561c1ba92ed11588978df05476cdccd72d2d55f4  DBMan.py
     a6a07e133ea671efbcbd41736ee028c796f3a10d7a4391a1f5803072b49f373e  Manager.py
-    2b720f5bcaa55054fd36e20908f18a0d5571a6e74f652eeba535b96478514d17  Remote_Rescue.py
+    9f68c05cd2db2e3272245a8dcba0a6f5c0ae56a3b9fba3b5960957e4d5e41c7c  Remote_Rescue.py
 ```
 - **Please Note**, If you are Running A different Version the Above Hashes will vary, Please Refer the Meta.json or Employ the `Code_Management.py` script.
 - **Please Note**, If Remote_Rescue.py doesnt show up in your results, do not worry as `Remote_Rescue.py` is only a `Rescue_Script` and not a dependency of the software.

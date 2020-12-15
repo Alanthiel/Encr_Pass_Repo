@@ -1,4 +1,4 @@
-# Encr_Pass_Repo V0.3.2
+# Encr_Pass_Repo V0.3.3
 
 Encrypted Local Password Manager:
 
@@ -68,7 +68,7 @@ V0.3.2
 
 V0.3.3
 
-- [ ] Software Management Module Integration
+- [x] ~~Software Management Module Integration~~
 - [ ] Design Password Meter   
 
 V0.3.5

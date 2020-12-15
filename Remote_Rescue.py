@@ -32,7 +32,7 @@ if __name__ == "__main__":
         exit()
 
     if verify_result == KeyboardInterrupt:
-        print("\033[1;31;49m✗\n\033[0;0mKeyboard Interrupt Signal Recieved...... Exiting")
+        print("\033[1;31;49m✗\n\033[0;0mKeyboard Interrupt Signal Received...... Exiting")
         exit()
 
     if verify_result is False:

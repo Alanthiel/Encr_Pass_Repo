@@ -20,11 +20,11 @@ In Order to Protect against these for any users of this Project for personal use
 
 **Automated Script Check:**
 
-- Download the Latest version of `Code_Management.py`
+- Download the Latest version of `Remote_Rescue.py`
 - Copy the script to your Software Folder
 - Run the script
 ```
-    $ ./Code_Management.py
+    $ ./Remote_Rescue.py
 ```
 - Follow the Onscreen Steps to automatically Verify and/or Rectify your copy of the Software
 

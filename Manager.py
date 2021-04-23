@@ -1,6 +1,6 @@
 # MIT License
 
-# Copyright (c) 2020 Nehal Gowrish (Alias: Alux-Alpha)
+# Copyright (c) 2020 Nehal Gowrish (Alias: Alanthiel)
 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -41,7 +41,7 @@ content = ["Auth.py", "DBMan.py", "LICENSE", "README", "Meta.json", "Manager.py"
 def get_remote_version():
     try:
         return \
-            requests.get("https://raw.githubusercontent.com/Alux-Alpha/Encr_Pass_Repo/master/Meta.json").json()[
+            requests.get("https://raw.githubusercontent.com/Alanthiel/Encr_Pass_Repo/master/Meta.json").json()[
                 "Versions"][
                 -1]
     except ConnectionError:
@@ -72,7 +72,7 @@ def update(portion=None, output=False):
         for file in portion:
             if output is True:
                 print("\nUpdating {} Module..... ".format(file), end='')
-            code = requests.get("https://raw.githubusercontent.com/Alux-Alpha/Encr_Pass_Repo/master/{}".format(file))
+            code = requests.get("https://raw.githubusercontent.com/Alanthiel/Encr_Pass_Repo/master/{}".format(file))
             if code.status_code != 200:
                 return Errors.FileError
             with open(file, 'w') as fi:
@@ -90,7 +90,7 @@ def update(portion=None, output=False):
 def get_remote_hashtable():
     try:
         remote_hash = \
-            requests.get("https://raw.githubusercontent.com/Alux-Alpha/Encr_Pass_Repo/master/Meta.json").json()[
+            requests.get("https://raw.githubusercontent.com/Alanthiel/Encr_Pass_Repo/master/Meta.json").json()[
                 "Hashes"]
         return remote_hash
     except ConnectionError:
@@ -108,7 +108,7 @@ def get_local_hashtable():
 def verify_meta_data(rectify=False):
     try:
         remote_hash = \
-            requests.get("https://raw.githubusercontent.com/Alux-Alpha/Encr_Pass_Repo/master/Meta.json").json()
+            requests.get("https://raw.githubusercontent.com/Alanthiel/Encr_Pass_Repo/master/Meta.json").json()
     except ConnectionError:
         return Errors.Con_Fail
     try:

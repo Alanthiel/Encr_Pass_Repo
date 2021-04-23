@@ -3,14 +3,21 @@
 import requests
 from requests.exceptions import ConnectionError
 
-
 if __name__ == "__main__":
     print("Downloading Software Management Module from GitHub.....  ", end='')
     try:
-        manager = requests.get("https://raw.githubusercontent.com/Alux-Alpha/Encr_Pass_Repo/master/Manager.py")
-        with open("Manager.py", 'w') as man:
-            man.write(manager.text)
-            man.close()
+        manager = requests.get("https://raw.githubusercontent.com/Alanthiel/Encr_Pass_Repo/master/Manager.py")
+        if manager.status_code == 200:
+            with open("Manager.py", 'w') as man:
+                man.write(manager.text)
+                man.close()
+        elif manager.status_code % 500 > 0:
+            print('\033[1;31;49m✗\n\033[0;0mServerside Error Please Try again later, Aborting')
+            exit()
+        elif manager.status_code % 400 > 0:
+            print('\033[1;31;49m✗\n\033[0;0mClient Error, Ensure Remote_Rescue.py is at the latest version. Else '
+                  'Please raise an Issue at "https://github.com/Alanthiel/Encr_Pass_Repo/issues"')
+            exit()
 
     except ConnectionError:
         print("\033[1;31;49m✗\n\033[0;0mConnection Error, Please Check your Internet Connection.....   Exiting")

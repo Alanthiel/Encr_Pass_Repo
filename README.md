@@ -90,4 +90,4 @@ V2:
 - [ ] Design Time Based 2FA Authentication
 
 
-Developed by Alux-Alpha ( Nehal.GS@protonmail.ch )
+Developed by Alanthiel ( Nehal.GS@protonmail.ch )

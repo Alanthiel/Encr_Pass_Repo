@@ -1,6 +1,6 @@
 # MIT License
 
-# Copyright (c) 2020 Nehal Gowrish (Alias: Alux-Alpha)
+# Copyright (c) 2020 Nehal Gowrish (Alias: Alanthiel)
 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -61,6 +61,9 @@ class Bundle:
 
 class DataBase:
     def __init__(self, db_path="store.sql"):
+        self.open_conn(db_path)
+
+    def open_conn(self, db_path='store.sql'):
         source = sqlite3.connect(db_path)
         self.store = sqlite3.connect(":memory:")
         source.backup(self.store)

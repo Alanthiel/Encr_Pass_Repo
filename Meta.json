@@ -23,6 +23,13 @@
       "Manager.py": "a6a07e133ea671efbcbd41736ee028c796f3a10d7a4391a1f5803072b49f373e",
       "Remote_Rescue.py": "9f68c05cd2db2e3272245a8dcba0a6f5c0ae56a3b9fba3b5960957e4d5e41c7c",
       "Commit": "2020-12-15:03:00:00"
+    },
+    "0.4.1p": {
+      "Auth.py": "c3ac5e98f5a5b262c01e802d1466dcf608eed24b632034a043d31db099769dba",
+      "DBMan.py": "dd54bcb81f660c085eca5018eca8a05c3b86ca65bc6b5e02d75ee24722a899bb",
+      "Manager.py": "3c8cf33c3a264c4e8d9b0f0e389cb7aff2053f3e936fff28f8b6d6df682504a7",
+      "Remote_Rescue.py": "da28467bb1e79ea35360ee9c29eda2417522bd5dc6a72d2f9129ba71cd2d0e64",
+      "Commit": "2021-05-04:10:52:00"
     }
   }
 }

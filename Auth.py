@@ -30,37 +30,37 @@ MODE_RAW = "RAW PASSWORD IS STORED IN THE CREDENTIALS INSTANCE"  # Password Gen
 MODE_KEY = "CREDENTIALS INSTANCE IS PROBABLY FULL"  # Post Encryption / Decryption
 MODE_AUTH = "EVERYTHING BUT THE KEY IS KNOWN, USED FOR AUTHENTICATION"  # Authentication of Database
 
-# TODO: Redesign Read / Write Operations around Virtual Memory, with either mmap or io.BytesIO, preferably  <BytesIO>
+# TODO: rework authencation module
 
 
 class Credentials:
     def __init__(self, key=None, nonce=None, salt=None, tag=None):
         if nonce is None:
             self.nonce = get_random_bytes(12)
-            self.__mode = MODE_RAW
+            self._mode = MODE_RAW
         else:
             self.nonce = nonce
 
         if salt is None:
             self.salt = get_random_bytes(16)
-            self.__mode = MODE_RAW
+            self._mode = MODE_RAW
         else:
             self.salt = salt
 
         if key is None:
-            self.__mode = MODE_AUTH
+            self._mode = MODE_AUTH
         else:
             self.key = key
 
-        if self.__mode is MODE_RAW:
+        if self._mode is MODE_RAW:
             self.key = self.gen_key(self.key, self.salt)
-            self.__mode = MODE_KEY
+            self._mode = MODE_KEY
 
         self.tag = tag
 
     def gen_key(self, passwd=None, salt=None):
         if passwd is None:
-            if self.__mode is MODE_AUTH:
+            if self._mode is MODE_AUTH:
                 raise ValueError('Key value not Set, Please Provide Key')
             else:
                 passwd = self.key
@@ -75,8 +75,8 @@ class Credentials:
             self.key = self.gen_key(passwd=passwd)
         else:
             raise ValueError("Invalid Mode Parameter")
-        if self.__mode is MODE_AUTH:
-            self.__mode = MODE_KEY
+        if self._mode is MODE_AUTH:
+            self._mode = MODE_KEY
 
 
 def decipher_and_read(path='store.cr'):
@@ -99,8 +99,6 @@ def decipher_and_read(path='store.cr'):
             if input("MAC Check Failure.......File Tampered With / Corrupted, Proceed? (y?) ").lower() != 'y':
                 return False
     return content, cipher
-    # TODO: Design Virtual Memory Processing -> Load to Virtual Memory, Convert Content to BytesIO fed into return
-    #       Returns BytesIO to <class Database> from <DBMan.py>
 
 
 # def lock_file(context, cred=None, path='store.sql'):
@@ -122,8 +120,6 @@ def write_file(context, cred=None, path='store.cr'):
         out_stream.close()
     return cred
 
-    # TODO: Design Virtual Memory Processing -> read connection virtual database i.e. <class DataBase :: source >
-    #       file i.e. virtual memory file and transfer it to context and write as postscript to output .db file
 
 
 if __name__ == "__main__":

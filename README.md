@@ -1,4 +1,4 @@
-# Encr_Pass_Repo V0.3.3
+# Encr_Pass_Repo V0.4.1p
 
 Encrypted Local Password Manager:
 
@@ -11,7 +11,7 @@ Encrypted Local Password Manager:
 
 In Order to Protect against these for any users of this Project for personal use, Please follow the Following Guidelines 
 
-- Use a Strong Password: Use Passwords with Special Characters, Uppercase Lower Case, Numbers (or) follow: [PasswordGuide](https://xkcd.com/936/), [How-To-Geek](https://www.howtogeek.com/195430/how-to-create-a-strong-password-and-remember-it/)
+- Use a Strong Password: Use Passwords with Special Characters, Uppercase Lower Case, Numbers (or) follow: [How-To-Geek](https://www.howtogeek.com/195430/how-to-create-a-strong-password-and-remember-it/)
 - Check the Strength of your Password using either [Password Strength Meter](http://www.passwordmeter.com/) or [Password Test](https://www.my1login.com/resources/password-strength-test/)
 - Make Sure the Software or Code you are using to open your Databases are obtained from a Trusted Source, example the Project Git Page [Encr_Pass_Repo](https://github.com/Alux-Alpha/Encr_Pass_Repo)
 - Check the Integrity of the Software Using SHA CheckSums of the files. Refer to the Guide Below
@@ -44,10 +44,10 @@ For Linux/Mac Users:
 ```
 - Verify the SHA256 sum, i.e. Output with the following, esp the provided string of digits and numbers
 ```
-    029aa7bc2733ec9b3b7f9ea377c09ebe6688da677c335480bb41340d325cc7ec  Auth.py
-    873636cce8697b9a0605e3ba561c1ba92ed11588978df05476cdccd72d2d55f4  DBMan.py
-    a6a07e133ea671efbcbd41736ee028c796f3a10d7a4391a1f5803072b49f373e  Manager.py
-    9f68c05cd2db2e3272245a8dcba0a6f5c0ae56a3b9fba3b5960957e4d5e41c7c  Remote_Rescue.py
+    c3ac5e98f5a5b262c01e802d1466dcf608eed24b632034a043d31db099769dba  Auth.py
+    dd54bcb81f660c085eca5018eca8a05c3b86ca65bc6b5e02d75ee24722a899bb  DBMan.py
+    3c8cf33c3a264c4e8d9b0f0e389cb7aff2053f3e936fff28f8b6d6df682504a7  Manager.py
+    da28467bb1e79ea35360ee9c29eda2417522bd5dc6a72d2f9129ba71cd2d0e64  Remote_Rescue.py
 ```
 - **Please Note**, If you are Running A different Version the Above Hashes will vary, Please Refer the Meta.json or Employ the `Code_Management.py` script.
 - **Please Note**, If Remote_Rescue.py doesnt show up in your results, do not worry as `Remote_Rescue.py` is only a `Rescue_Script` and not a dependency of the software.
@@ -73,21 +73,12 @@ V0.3.3
 
 V0.3.5
 
-- [ ] Redesign Physical Write / Write Operations around Private Virtual Files with passthroughs to Database for Security
-- [ ] Design { Virtual File - Sqlite3 connection } pathway, Refer infile TODOs  
-- [ ] Developing SQL Management System
+- [ ] Implement Json based Passtore
+- [ ] Rework Authencation Module
 - [ ] Developing Initial CLI Interface  
 
 V1:
 
 - [ ] Design GUI
-- [ ] Optimize Encryption / Decryption Pathways
-- [ ] Optimize File / DB Management
-
-
-V2:
-
-- [ ] Design Time Based 2FA Authentication
-
 
 Developed by Alanthiel ( Nehal.GS@protonmail.ch )

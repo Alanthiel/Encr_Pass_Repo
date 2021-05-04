@@ -20,52 +20,33 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-import sqlite3
+from dataclasses import dataclass, asdict, astuple
 import Auth
-from sqlite3 import Error
 
 
-# TODO: Develop System to Read sqlite3 and handle storage of Data:
-#       To try : A JSon instance containing all data from db
-#                A List / Dict instance containing <Platform - User_ID> Pairs, with Passwords / 2FA codes queried on
-#                   request
-
-# TODO: Design System around two Live connections:
-#           -> In Memory virtual db - i.e. <Class Database :: self.store>
-#           -> Physical db connected by source -> Virtual File -> saved to Physical File by Auth.write_file
+# TODO: Deploy JSON based Encrypted Store using Auth module
+# TODO: Deploy sqlcipher based Encrypted Store
 
 
+@dataclass(repr=False, unsafe_hash=True)
 class Bundle:
-    def __init__(self, platform=None, user_id=None, password=None, backup_codes=None, db_id=None):
-        self.db_id = db_id
-        self.platform = platform
-        self.user_id = user_id
-        self.password = password
-        self.backup_codes = backup_codes
-        self.check_codes()
+    dbid: str = None
+    platform: str = None
+    userid: str = None
+    password: str = None
+    backup_codes: list = None
+    serectkey: str = None
+
+    def __repr__(self):
+        return "Credentials (Platform: {}, User Id: {}".format(self.platform, self.userid)
 
     def check_codes(self):
         if self.backup_codes is None:
-            return True
-        if type(self.backup_codes) is not list:
-            raise TypeError("Error: Backup Code format incorrect, Format should be of type <list>")
-        for i in self.backup_codes:
-            if type(i) is not str:
-                raise TypeError("Error: Code format incorrect, [{}] is not of type <string>".format(i))
+            return False
 
-    def return_dict(self):
-        self.check_codes()
-        return {"Platform": self.platform, "User ID": self.user_id, "Password": self.password,
-                "2FA Codes": self.backup_codes}
 
 
 class DataBase:
     def __init__(self, db_path="store.sql"):
-        self.open_conn(db_path)
+        return NotImplemented
 
-    def open_conn(self, db_path='store.sql'):
-        source = sqlite3.connect(db_path)
-        self.store = sqlite3.connect(":memory:")
-        source.backup(self.store)
-        # TODO: Create Database connections
-        #       from -> Load to Virtual Memory, Decrypt and Convert to sqlite3 connection instance

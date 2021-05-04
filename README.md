@@ -74,7 +74,7 @@ V0.3.5
 
 - [ ] Implement Json based Pass-store
 - [ ] Rework Authentication Module
-- [ ] Developing Initial CLI Interface  
+- [ ] Implement Initial CLI Interface  
 
 V1:
 

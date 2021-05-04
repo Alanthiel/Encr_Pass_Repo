@@ -2,9 +2,8 @@
 
 Encrypted Local Password Manager:
 
-- Content stored in a local SQL Database using sqlite3 encrypted using PyCryptodome Module.
+- Content stored and encrypted using PyCryptodome Module.
 - Manipulation of Database occurs through loading of database into virtual memory prior to encryption or decryption in order to prevent storage of unlocked Database locally.
-- 2 Phase Database Commits - Internal Changes to Virtual Memory, Final Commits to Physically Stored Database
 - Encryption used is AES 256bit Encryption in GCM mode with MAC Tag Verification to detect tampering of database. 
 
 **Please Note: Due to Password Databases stored Locally as Files, This approach is susceptible to Brute Force Attacks, Man-In-the-Middle attacks or Phishing Attacks**
@@ -73,8 +72,8 @@ V0.3.3
 
 V0.3.5
 
-- [ ] Implement Json based Passtore
-- [ ] Rework Authencation Module
+- [ ] Implement Json based Pass-store
+- [ ] Rework Authentication Module
 - [ ] Developing Initial CLI Interface  
 
 V1:

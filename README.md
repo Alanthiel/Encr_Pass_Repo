@@ -19,6 +19,8 @@ In Order to Protect against these for any users of this Project for personal use
 
 **Automated Script Check:**
 
+**Please Note: Remote-Recuse is temporarily down due to critical issues with intregrity module. Will be reimplemented port rework**
+
 - Download the Latest version of `Remote_Rescue.py`
 - Copy the script to your Software Folder
 - Run the script
@@ -74,6 +76,7 @@ V0.3.5
 
 - [ ] Implement Json based Pass-store
 - [ ] Rework Authentication Module
+- [ ] Rework Intregrity Module
 - [ ] Implement Initial CLI Interface  
 
 V1:

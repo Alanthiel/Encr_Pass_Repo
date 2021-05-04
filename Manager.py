@@ -172,7 +172,7 @@ def verify_integrity(remote_priority=True, fallback=True, rescue_by_update=False
         if rescue_by_update is True:
             return update()
         else:
-            return Errors.VersionError
+            return False
     if apparent_version:
         with fileinput.FileInput("Meta.json", inplace=True) as file:
             for line in file:

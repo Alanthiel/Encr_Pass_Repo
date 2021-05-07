@@ -53,7 +53,7 @@ For Linux/Mac Users:
 - **Please Note**, If you are Running A different Version the Above Hashes will vary, Please Refer the Meta.json or Employ the `Code_Management.py` script.
 - **Please Note**, If Remote_Rescue.py doesnt show up in your results, do not worry as `Remote_Rescue.py` is only a `Rescue_Script` and not a dependency of the software.
 - Will Update the Above CheckSums with subsequent Commits:
-    - Current Commit : `13 December 2020, 00:46 AM (IST)`
+    - Current Commit : `4 may 2021, 10:53 AM (IST)`
 
 - Ensure the Date on the  Commit Date and Time on the Readme.md file and the Version Number of your edition is Same as the [GitHub Page](https://github.com/Alux-Alpha/Encr_Pass_Repo)
 

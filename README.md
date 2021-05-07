@@ -70,16 +70,22 @@ V0.3.2
 V0.3.3
 
 - [x] ~~Software Management Module Integration~~
-- [ ] Design Password Meter   
 
-V0.3.5
+V0.4.1
 
 - [ ] Implement Json based Pass-store
 - [ ] Rework Authentication Module
 - [ ] Rework Intregrity Module
+
+V0.5
+
+- [ ] Design Password Meter   
+
+V1
+
 - [ ] Implement Initial CLI Interface  
 
-V1:
+V2:
 
 - [ ] Design GUI
 
